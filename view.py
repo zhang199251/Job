@@ -41,13 +41,14 @@ def show_all_job():
 
 @app.route('/create_job', methods=['POST'])
 def create_new_job():
-
     job_name = request.form.get('job_name')
     job_name = str.strip(job_name)
     data_json = request.form.get('data_json')
     data_json = str.strip(data_json)
     create_job(job_name, data_json)
-    return 'create successfully'
+    return ok({
+        'operation': 'Create job successfully!',
+    })
 
 
 @app.route('/get_job_by_id', methods=['GET'])
@@ -87,7 +88,9 @@ def update_data():
     data_json = request.form.get('data_json')
     data_json = str.strip(data_json)
     update_job(id, job_name, data_json)
-    return 'update successfully'
+    return ok({
+        'operation': 'Update job successfully!',
+    })
 
 
 @app.route('/delete_job_by_id', methods=['GET'])
