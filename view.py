@@ -31,7 +31,7 @@ def dump_job(job):
     return resp
 
 
-@app.route('/')
+@app.route('/show_all_job')
 def show_all_job():
     all_job = show_jobs()
     return ok({
@@ -93,9 +93,9 @@ def update_data():
     })
 
 
-@app.route('/delete_job_by_id', methods=['GET'])
+@app.route('/delete_job_by_id', methods=['POST'])
 def delete_job_id():
-    id = request.args.get('id')
+    id = request.form.get('id')
     try:
         delete_job_by_id(id)
     except DoesNotExist:
@@ -107,9 +107,9 @@ def delete_job_id():
     })
 
 
-@app.route('/delete_job_by_name', methods=['GET'])
+@app.route('/delete_job_by_name', methods=['POST'])
 def delete_job_name():
-    job_name = request.args.get('job_name')
+    job_name = request.form.get('job_name')
     job_name = str.strip(job_name)
     try:
         delete_job_by_name(job_name)
