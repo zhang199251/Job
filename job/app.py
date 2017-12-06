@@ -2,10 +2,12 @@
 
 
 import datetime
-from peewee import MySQLDatabase
+
 from flask import Flask
 from flask.json import JSONEncoder
-app = Flask(__name__)
+from peewee import MySQLDatabase
+
+app = Flask(__name__, template_folder='template')
 
 
 def connect_database():
@@ -35,4 +37,4 @@ user = 'root'
 database = 'people'
 db = connect_database()
 
-import view  # noqa
+import job.view.account_view  # noqa
