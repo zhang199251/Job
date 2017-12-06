@@ -1,7 +1,9 @@
 # coding: utf-8
 import datetime
+
 from peewee import Model, IntegerField, CharField, BlobField, DateTimeField
-from app import db
+
+from job import db
 
 
 class JobData(Model):

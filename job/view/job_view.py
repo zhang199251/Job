@@ -1,9 +1,11 @@
 # coding: utf-8
-from peewee import DoesNotExist
-from controller import show_jobs, create_job, get_job_by_id, get_job_by_name, update_job, delete_job_by_id, delete_job_by_name
-from flask import request
-from app import app
 from flask import jsonify
+from flask import request
+from peewee import DoesNotExist
+
+import job
+from job.controller.job_controller import show_jobs, create_job, get_job_by_id, get_job_by_name, update_job, \
+    delete_job_by_id, delete_job_by_name
 
 
 def ok(content='', status=200):
@@ -31,7 +33,7 @@ def dump_job(job):
     return resp
 
 
-@app.route('/show_all_job')
+@job.route('/show_all_job')
 def show_all_job():
     all_job = show_jobs()
     return ok({
@@ -39,7 +41,7 @@ def show_all_job():
     })
 
 
-@app.route('/create_job', methods=['POST'])
+@job.route('/create_job', methods=['POST'])
 def create_new_job():
     job_name = request.form.get('job_name')
     job_name = str.strip(job_name)
@@ -51,7 +53,7 @@ def create_new_job():
     })
 
 
-@app.route('/get_job_by_id', methods=['GET'])
+@job.route('/get_job_by_id', methods=['GET'])
 def select_job_by_id():
     id = request.args.get('id')
     try:
@@ -65,7 +67,7 @@ def select_job_by_id():
     })
 
 
-@app.route('/get_job_by_name', methods=['GET'])
+@job.route('/get_job_by_name', methods=['GET'])
 def select_job_by_name():
     job_name = request.args.get('job_name')
     job_name = str.strip(job_name)
@@ -80,7 +82,7 @@ def select_job_by_name():
     })
 
 
-@app.route('/update_job', methods=['POST'])
+@job.route('/update_job', methods=['POST'])
 def update_data():
     id = request.form.get('id')
     job_name = request.form.get('job_name')
@@ -93,7 +95,7 @@ def update_data():
     })
 
 
-@app.route('/delete_job_by_id', methods=['POST'])
+@job.route('/delete_job_by_id', methods=['POST'])
 def delete_job_id():
     id = request.form.get('id')
     try:
@@ -107,7 +109,7 @@ def delete_job_id():
     })
 
 
-@app.route('/delete_job_by_name', methods=['POST'])
+@job.route('/delete_job_by_name', methods=['POST'])
 def delete_job_name():
     job_name = request.form.get('job_name')
     job_name = str.strip(job_name)

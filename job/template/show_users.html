@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>All Users</title>
+</head>
+<style>
+body {
+                background-color: #f1ffff;
+                text-align: center;
+                margin-top: 5%;
+                font: caption;
+        }
+.container {
+    position: absolute;
+}
+.section {
+    position: relative;
+    width: 100%;
+}
+
+th {
+    background-color: rgb(235,235,235);
+}
+
+td, th {
+    border: 1px solid rgb(190,190,190);
+    padding: 10px 20px;
+}
+th {
+    font-weight: bold;
+    text-align: -internal-center;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(200,200,200);
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+</style>
+
+<body>
+    <div class="container">
+        <table class="">
+            <tr>
+                <tn>用户 ID</tn>
+                <tn>用户名</tn>
+                <tn>邮箱</tn>
+                <tn>注册时间</tn>
+            </tr>
+            {% for user_info in all_users %}
+            <tr>
+                <td>{{ user_info.id }}</td>
+                <td>{{ user_info.username }} </td>
+                <td>{{ user_info.email }}</td>
+                <td>{{ user_info.create_time }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</body>
+</html>

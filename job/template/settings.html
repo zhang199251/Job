@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings</title>
+    <style>
+        body {
+                background-color: #f1ffff;
+                text-align:center;
+                margin-top: 10%;
+                margin-left: 40%;
+                margin-right: 40%;
+                border: 1px dotted lightgrey;
+                padding: 20px, 20px, 20px, 20px;
+                font: caption;
+        }
+    </style>
+</head>
+<body>
+<form action="http://127.0.0.1:5000/settings"
+      method="POST">
+    <p>
+        <h2>Settings</h2>
+        Hello! {{name}}, please set your new password and Email address.<br>
+        <br>
+        <input type="text" name="password" placeholder="new password" value=""><br>
+        <input type="text" name="email" placeholder="new Email address" ><br>
+        <br>
+        <input type="submit" value="Update"><br>
+        <a href="login_success"> Cancel </a>
+    </p>
+
+</form>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from model import JobData
+from job.model.job_model import JobData
 
 
 def show_jobs():

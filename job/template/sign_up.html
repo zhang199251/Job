@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up</title>
+    <style>
+        body {
+                background-color: #f1ffff;
+                text-align:center;
+                margin-top: 10%;
+                margin-left: 40%;
+                margin-right: 40%;
+                border: 1px dotted lightgrey;
+                padding: 20px, 20px, 20px, 20px;
+                font: caption;
+        }
+    </style>
+</head>
+<body>
+<form action="http://127.0.0.1:5000/sign_up"
+      method="POST">
+    <p>
+        <h2>Sign up</h2>
+        <input class="login-input input is-small" type="text" name="username" placeholder="username" value=""><br>
+        <input type="text" name="password" placeholder="password" value=""><br>
+        <input type="text" name="email" placeholder="email" value=""><br>
+        <br>
+        <input type="submit", value="Sign up"><br>
+        <a href="/"> Cancel </a>
+    </p>
+
+</form>
+</body>
+</html>
