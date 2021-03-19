@@ -9,7 +9,7 @@ Flask==0.12.2
 identify==1.0.7
 idna==2.6
 itsdangerous==0.24
-Jinja2==2.10
+Jinja2==2.11.3
 MarkupSafe==1.0
 mysql==0.0.1
 MySQL-python==1.2.5
