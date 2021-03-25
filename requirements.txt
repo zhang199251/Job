@@ -18,7 +18,7 @@ peewee==2.10.2
 pre-commit==1.4.1
 pycparser==2.18
 PyMySQL==0.7.11
-PyYAML==3.12
+PyYAML==5.4
 requests==2.18.4
 simplejson==3.12.0
 six==1.11.0
